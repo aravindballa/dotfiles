@@ -1,0 +1,50 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 16,
+    // "editor.fontSize": 18,
+    "editor.tabSize": 2,
+    "editor.fontFamily": "Inconsolata, Roboto Mono, Monaco, 'Courier New', monospace",
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "files.autoSave": "off",
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "workbench.colorTheme": "Material Theme High Contrast",
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#FF7042",
+        "list.activeSelectionForeground": "#FF7042",
+        "list.inactiveSelectionForeground": "#FF7042",
+        "list.highlightForeground": "#FF7042",
+        "scrollbarSlider.activeBackground": "#FF704250",
+        "editorSuggestWidget.highlightForeground": "#FF7042",
+        "textLink.foreground": "#FF7042",
+        "progressBar.background": "#FF7042",
+        "pickerGroup.foreground": "#FF7042",
+        "tab.activeBorder": "#FF7042",
+        "notificationLink.foreground": "#FF7042"
+    },
+    "materialTheme.cache.workbench.settings": {
+        "accent": "Orange",
+        "themeColours": "Default",
+        "accentPrevious": "Tomato"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true,
+        "suppressWelcomeNotice": true
+    },
+    "window.zoomLevel": 0,
+    // These are all my auto-save configs
+    "editor.formatOnSave": true,
+    // turn it off for JS
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+    "eslint.autoFixOnSave": true,
+    "eslint.alwaysShowStatus": true,
+    "todohighlight.isEnable": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "gitlens.keymap": "none"
+}
