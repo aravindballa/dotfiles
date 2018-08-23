@@ -1,15 +1,17 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontSize": 16,
-    // "editor.fontSize": 18,
+    // "editor.fontSize": 24,
     "editor.tabSize": 2,
-    "editor.fontFamily": "Inconsolata, Roboto Mono, Monaco, 'Courier New', monospace",
-    "workbench.iconTheme": "eq-material-theme-icons",
+    "editor.fontFamily": "Dank Mono, Roboto Mono, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "vscode-great-icons",
     "files.autoSave": "off",
     "files.associations": {
-        "*.js": "javascriptreact"
+        "*.js": "javascriptreact",
+        "*.ejs": "ejs"
     },
-    "workbench.colorTheme": "Material Theme High Contrast",
+    "workbench.colorTheme": "Monokai Classic",
     "workbench.colorCustomizations": {
         "activityBarBadge.background": "#FF7042",
         "list.activeSelectionForeground": "#FF7042",
@@ -36,8 +38,8 @@
     "window.zoomLevel": 0,
     // These are all my auto-save configs
     "editor.formatOnSave": true,
-    // turn it off for JS
-    "[javascript]": {
+    // turn it off for EJS
+    "[ejs]": {
         "editor.formatOnSave": false
     },
     "eslint.autoFixOnSave": true,
@@ -47,6 +49,7 @@
         "javascript": "javascriptreact"
     },
     "gitlens.keymap": "none",
+    "gitlens.historyExplorer.enabled": true,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Meslo LG M for powerline"
+    "terminal.integrated.fontFamily": "Meslo LG M for powerline",
 }
