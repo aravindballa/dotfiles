@@ -6,6 +6,7 @@ Yarn and Docker - https://medium.com/@johnwoodruff91/epic-dev-environment-with-w
 
 Some things to consider -
 - Install `nvm` instead of `n`
+- `git config --global core.autocrlf input`
 
 ## Few packages to install
 
