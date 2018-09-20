@@ -52,4 +52,6 @@
     "gitlens.historyExplorer.enabled": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Meslo LG M for powerline",
+    "breadcrumbs.enabled": true,
+    "terminal.integrated.shellArgs.osx": [],
 }
