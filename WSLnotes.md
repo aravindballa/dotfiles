@@ -4,6 +4,10 @@ The basic setup - https://github.com/lloydstubber/my-wsl-setup
 
 Yarn and Docker - https://medium.com/@johnwoodruff91/epic-dev-environment-with-wsl-dc81e234ae61
 
+https://char.gd/blog/2017/essential-apps-for-switching-from-mac-to-windows
+
+Sketch on Windows - https://icons8.com/lunacy
+
 Some things to consider -
 - Install `nvm` instead of `n`
 - `git config --global core.autocrlf input`
