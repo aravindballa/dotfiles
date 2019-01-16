@@ -8,6 +8,7 @@ source ~/.iterm2_shell_integration.zsh
 export ZSH=/Users/Aravind/.oh-my-zsh
 
 export PATH=$PATH:/Users/Aravind/Library/Android/sdk/platform-tools/
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes

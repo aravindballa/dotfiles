@@ -15,8 +15,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
-echo "mkdir -p ${HOME}/dev"
-
 echo "installing homebrew"
 # install homebrew https://brew.sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -52,7 +50,7 @@ npm install --global serve fkill-cli
 brew install yarn --without-node
 
 echo "installing apps with brew cask"
-brew cask install google-chrome firefox bettertouchtool \
+brew cask install google-chrome firefox \
 visual-studio-code dash \
 kap obs zoomus
 
