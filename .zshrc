@@ -1,4 +1,5 @@
 . /usr/local/etc/profile.d/z.sh
+source ~/.iterm2_shell_integration.zsh
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -7,12 +8,6 @@
 export ZSH=/Users/Aravind/.oh-my-zsh
 
 export PATH=$PATH:/Users/Aravind/Library/Android/sdk/platform-tools/
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/usr/local/sbin:$PATH"
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -99,12 +94,16 @@ alias sudo='sudo '
 alias kill_express='lsof -nti:4000 | xargs kill -9'
 alias kill_plack='lsof -nti:8080 | xargs kill -9'
 alias kill_everything='kill_express && kill_plack'
+alias pp_gp='ssh guru-processing'
+alias pp_login='ssh login'
+alias pp_code='code /Users/Aravind/Documents/Paperpile/pp.code-workspace'
 
 # Custom aliases
-alias nuke="sudo m -rf node_modules yarn.lock"
+alias nuke="sudo rm -rf node_modules yarn.lock"
 alias nig="npm install --global"
 alias ya="yarn add"
 alias yad="yarn add -D"
+alias yo="yarn install"
 alias boom="find . -name "node_modules" -exec rm -rf '{}' +"
 alias c="code ."
 alias ll="ls -al"
@@ -116,5 +115,11 @@ eval "$(hub alias -s)"
 
 DEFAULT_USER="aravindballa"i
 prompt_context(){} 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/Users/Aravind/bin/Sencha/Cmd:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 
