@@ -47,7 +47,7 @@ nvm use node
 echo "installing a few global npm packages"
 npm install --global serve fkill-cli 
 
-brew install yarn --without-node
+brew install yarn --ignore-dependencies
 
 echo "installing apps with brew cask"
 brew cask install google-chrome firefox \
