@@ -11,25 +11,7 @@
         "*.js": "javascriptreact",
         "*.ejs": "ejs"
     },
-    "workbench.colorTheme": "Monokai Classic",
-    "workbench.colorCustomizations": {
-        "activityBarBadge.background": "#FF7042",
-        "list.activeSelectionForeground": "#FF7042",
-        "list.inactiveSelectionForeground": "#FF7042",
-        "list.highlightForeground": "#FF7042",
-        "scrollbarSlider.activeBackground": "#FF704250",
-        "editorSuggestWidget.highlightForeground": "#FF7042",
-        "textLink.foreground": "#FF7042",
-        "progressBar.background": "#FF7042",
-        "pickerGroup.foreground": "#FF7042",
-        "tab.activeBorder": "#FF7042",
-        "notificationLink.foreground": "#FF7042"
-    },
-    "materialTheme.cache.workbench.settings": {
-        "accent": "Orange",
-        "themeColours": "Default",
-        "accentPrevious": "Tomato"
-    },
+    "workbench.colorTheme": "Monokai Pro",
     "explorer.confirmDragAndDrop": false,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true,
@@ -42,9 +24,12 @@
     "[ejs]": {
         "editor.formatOnSave": false
     },
+    // turn it off for Javascript
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
     "eslint.autoFixOnSave": true,
     "eslint.alwaysShowStatus": true,
-    "todohighlight.isEnable": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     },
@@ -52,6 +37,10 @@
     "gitlens.historyExplorer.enabled": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Meslo LG M for powerline",
-    "breadcrumbs.enabled": true,
     "terminal.integrated.shellArgs.osx": [],
+    "editor.renderWhitespace": "boundary",
+    "breadcrumbs.enabled": true,
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "explorer.autoReveal": false
 }
