@@ -33,6 +33,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 echo "installing homebrew"
 # install homebrew https://brew.sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -70,7 +73,7 @@ brew install yarn --ignore-dependencies
 echo "installing apps with brew cask"
 brew cask install google-chrome firefox \
 visual-studio-code dash \
-kap obs zoomus
+kap obs zoomus hyper
 
 echo "Generating an RSA token for GitHub"
 ssh-keygen -t rsa -b 4096 -C "bsaaravind@gmail.com"

@@ -1,5 +1,4 @@
 . /usr/local/etc/profile.d/z.sh
-source ~/.iterm2_shell_integration.zsh
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -8,7 +7,6 @@ source ~/.iterm2_shell_integration.zsh
 export ZSH=/Users/Aravind/.oh-my-zsh
 
 export PATH=$PATH:/Users/Aravind/Library/Android/sdk/platform-tools/
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -100,7 +98,7 @@ alias pp_login='ssh login'
 alias pp_code='code /Users/Aravind/Documents/Paperpile/pp.code-workspace'
 
 # Custom aliases
-alias nuke="sudo rm -rf node_modules yarn.lock"
+alias nuke="sudo rm -rfv node_modules yarn.lock"
 alias nig="npm install --global"
 alias ya="yarn add"
 alias yad="yarn add -D"
@@ -109,7 +107,12 @@ alias boom="find . -name "node_modules" -exec rm -rf '{}' +"
 alias c="code ."
 alias ll="ls -al"
 
+copy () { command cat "$@" | pbcopy }
+
 alias de="docker exec -it"
+alias d_rm_all="docker rm $(docker ps -aq)"
+alias d_rmi_all="docker rmi $(docker images -q)"
+alias d_stop_all="docker stop $(docker ps -aq)"
 
 # hub alias
 eval "$(hub alias -s)"
