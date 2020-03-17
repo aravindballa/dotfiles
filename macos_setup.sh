@@ -45,14 +45,11 @@ echo "brew installing stuff"
 # tree: really handy for listing out directories in text
 # xz: Extract .xz files
 # z: fuzzy match directories, cd in dir from anywhere
-brew install hub tree fortune fzf z wget xz zsh zsh-completions
-
-echo "installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+brew install hub tree fortune fzf z wget xz zsh zsh-completions bat git-lfs
 
 echo "configuring git"
 git config --global user.name "Aravind Balla"
-git config --global user.email "bsaaaravind@gmail.com"
+git config --global user.email "bsaaravind@gmail.com"
 
 echo "cloning dotfiles"
 git clone https://github.com/aravindballa/dotfiles "${HOME}/dotfiles"
@@ -80,3 +77,6 @@ ssh-keygen -t rsa -b 4096 -C "bsaaravind@gmail.com"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
 eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
+
+echo "installing oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

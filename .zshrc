@@ -4,9 +4,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Aravind/.oh-my-zsh
+export ZSH=/Users/aravindballa/.oh-my-zsh
 
-export PATH=$PATH:/Users/Aravind/Library/Android/sdk/platform-tools/
+# export DOCKER_HOST=tcp://192.168.0.9:2375
+
+# export PATH=$PATH:/Users/Aravind/Library/Android/sdk/platform-tools/
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -89,13 +91,14 @@ source $ZSH/oh-my-zsh.sh
 
 alias sudo='sudo '
 
-# Aliases for paperpile
+# Aliases for work
 alias kill_express='lsof -nti:4000 | xargs kill -9'
 alias kill_plack='lsof -nti:8080 | xargs kill -9'
 alias kill_everything='kill_express && kill_plack'
 alias pp_gp='ssh guru-processing'
 alias pp_login='ssh login'
-alias pp_code='code /Users/Aravind/Documents/Paperpile/pp.code-workspace'
+alias gpos='git pl origin sprint'
+alias nm_build='npx nodemon --watch root --watch src build.js'
 
 # Custom aliases
 alias nuke="sudo rm -rfv node_modules yarn.lock"
@@ -106,24 +109,63 @@ alias yo="yarn install"
 alias boom="find . -name "node_modules" -exec rm -rf '{}' +"
 alias c="code ."
 alias ll="ls -al"
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias v="nvim"
+alias pb="git checkout -"
 
 copy () { command cat "$@" | pbcopy }
+
+listening() {
+    if [ $# -eq 0 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P
+    elif [ $# -eq 1 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color $1
+    else
+        echo "Usage: listening [pattern]"
+    fi
+}
 
 alias de="docker exec -it"
 alias d_rm_all="docker rm $(docker ps -aq)"
 alias d_rmi_all="docker rmi $(docker images -q)"
 alias d_stop_all="docker stop $(docker ps -aq)"
 
+init_repo() {
+  mkcd $1
+  git init
+  npm init -y
+  npx license $(npm get init.license) -o "$(npm get init.author.name)" > LICENSE
+  npx gitignore node
+  npx covgen "$(npm get init.author.email)"
+  git add -A
+  git commit -m "Initial commit"
+}
+
+shorten() { node /Users/aravindballa/DEV/balla.dev/node_modules/.bin/netlify-shortener "$1" "$2"; }
+
 # hub alias
 eval "$(hub alias -s)"
 
 DEFAULT_USER="aravindballa"i
-prompt_context(){} 
+prompt_context(){}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/Users/Aravind/bin/Sencha/Cmd:$PATH"
+
+# export PATH="/Users/Aravind/bin/Sencha/Cmd:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+export JAVA_HOME=$(/usr/libexec/java_home)
 
+export ANDROID_HOME=~/Library/Android/sdk/
+export PATH=$PATH:$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+source "/Users/aravindballa/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --follow --glob "!.git/*"'
